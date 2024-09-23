@@ -2,44 +2,91 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Milho.MainPage"
-             Shell.NavBarIsVisible="False">
-
-
-    <StackLayout Padding="20">
-
-    <Image  Source="milho.png"
-            Aspect="AspectFill"
-            Grid.RowSpan="2"/>
-
-    <Label x:Name="PerguntaLabel"
-               Text="Pergunta aparecerá aqui"
-               FontSize="24"
-               HorizontalOptions="Center" />
+             BackgroundColor="White"
+             Shell.NavBarIsVisible="False"
+             Title="Jogo do Milhão">
+    
+    <Grid RowDefinitions="*, Auto, Auto, Auto" Padding="20" ColumnDefinitions="*" RowSpacing="10">
         
-        <RadioButton x:Name="RespostaA"
-                     Content="Resposta A"
-                     GroupName="Respostas" />
+      
+        <Frame Grid.Row="0" BackgroundColor="#E0E0E0" CornerRadius="15" Padding="20" HasShadow="True" HorizontalOptions="FillAndExpand">
+            <Label Text="Imagem da logo Jogo do Milhão"
+                   FontSize="Large"
+                   HorizontalOptions="Center"
+                   VerticalOptions="CenterAndExpand"
+                   TextColor="Black" />
+        </Frame>
 
-        <RadioButton x:Name="RespostaB"
-                     Content="Resposta B"
-                     GroupName="Respostas" />
+   
+        <Frame Grid.Row="1" BackgroundColor="#F0F0F0" CornerRadius="15" Padding="15" HorizontalOptions="FillAndExpand">
+            <Label Text="Pergunta X"
+                   FontSize="Medium"
+                   HorizontalOptions="Center"
+                   VerticalOptions="CenterAndExpand"
+                   TextColor="Black"/>
+        </Frame>
 
-        <RadioButton x:Name="RespostaC"
-                     Content="Resposta C"
-                     GroupName="Respostas" />
-                     
-        <RadioButton x:Name="RespostaD"
-                     Content="Resposta D"
-                     GroupName="Respostas" />
-        
-        <Button Text="Enviar Resposta"
-                Clicked="OnEnviarRespostaClicked" />
-        
-        <Label x:Name="PontuacaoLabel"
-               Text="Pontuação: 0"
-               FontSize="18"
-               HorizontalOptions="Center" />
-    </StackLayout>
+        <StackLayout Grid.Row="2" Spacing="10">
+            <Button Text="Opção 1"
+                    BackgroundColor="#D3D3D3"
+                    TextColor="Black"
+                    CornerRadius="10"
+                    FontAttributes="Bold"
+                    HorizontalOptions="FillAndExpand"/>
 
+            <Button Text="Opção 2"
+                    BackgroundColor="#D3D3D3"
+                    TextColor="Black"
+                    CornerRadius="10"
+                    FontAttributes="Bold"
+                    HorizontalOptions="FillAndExpand"/>
+
+            <Button Text="Opção 3"
+                    BackgroundColor="#D3D3D3"
+                    TextColor="Black"
+                    CornerRadius="10"
+                    FontAttributes="Bold"
+                    HorizontalOptions="FillAndExpand"/>
+
+            <Button Text="Opção 4"
+                    BackgroundColor="#D3D3D3"
+                    TextColor="Black"
+                    CornerRadius="10"
+                    FontAttributes="Bold"
+                    HorizontalOptions="FillAndExpand"/>
+        </StackLayout>
+
+        <Grid Grid.Row="3" ColumnSpacing="15" Padding="0" HorizontalOptions="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Button Text="Ajuda" 
+                    Grid.Column="0"
+                    BackgroundColor="#2196F3"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    CornerRadius="10"
+                    HorizontalOptions="FillAndExpand"/>
+
+            <Button Text="Pular"
+                    Grid.Column="1"
+                    BackgroundColor="#FFC107"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    CornerRadius="10"
+                    HorizontalOptions="FillAndExpand"/>
+
+            <Button Text="Sair"
+                    Grid.Column="2"
+                    BackgroundColor="#F44336"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    CornerRadius="10"
+                    HorizontalOptions="FillAndExpand"/>
+        </Grid>
+
+    </Grid>
 </ContentPage>
-
