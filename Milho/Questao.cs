@@ -1,6 +1,6 @@
-namespace Milho;
-
-public class Questao{
+namespace Milho
+{
+    public class Questao{
 
     public string Pergunta;
     public string Resposta1;
@@ -86,5 +86,6 @@ public class Questao{
 
             return false;
         }
+    }
     }
 }

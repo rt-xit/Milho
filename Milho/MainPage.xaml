@@ -3,17 +3,134 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Milho.MainPage"
              Shell.NavBarIsVisible="False"
-             BackgroundColor="Black">
+             BackgroundColor="white">
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="AUTO"/>
-            <RowDefinition Height="AUTO"/>
-            <RowDefinition Height="AUTO"/>
-            <RowDefinition Height="AUTO"/>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="100" />
+            <RowDefinition Height="100" />
+            <RowDefinition Height="100" />
+            <RowDefinition Height="100" />
+            <RowDefinition Height="100" />
+            <RowDefinition Height="100" />
+            <RowDefinition Height="100" />
         </Grid.RowDefinitions>
 
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
 
+        <!-- Imagem -->
+        <Image Source="totvs.png"
+               HeightRequest="200"
+               Grid.Row="0"
+               Grid.Column="0"
+               Grid.ColumnSpan="3" />
+
+        <!-- Pergunta -->
+        <Label x:Name="labelpergunta"
+               BackgroundColor="black"
+               HorizontalTextAlignment="Center"
+               Margin="20,0,20,20"
+               Text="Sua pergunta aqui"
+               TextColor="white"
+               WidthRequest="600"
+               FontSize="27"
+               Grid.Row="1"
+               Grid.Column="0"
+               Grid.ColumnSpan="3" />
+
+        <!-- Botões de resposta -->
+        <Button x:Name="Button1"
+                Clicked="OnButtonResposta01ButtonClicked"
+                WidthRequest="600"
+                BackgroundColor="#1e4c96"
+                FontSize="12"
+                Text="Opção 1"
+                Margin="0,0,0,10"
+                Grid.Row="2"
+                Grid.Column="0"
+                Grid.ColumnSpan="3" />
+
+        <Button x:Name="Button2"
+                 Clicked="OnButtonResposta02ButtonClicked"
+                WidthRequest="600"
+                BackgroundColor="#1e4c96"
+                FontSize="12"
+                Text="Opção 2"
+                Margin="0,0,0,10"
+                Grid.Row="3"
+                Grid.Column="0"
+                Grid.ColumnSpan="3" />
+
+        <Button x:Name="Button3"
+                Clicked="OnButtonResposta03ButtonClicked"
+                WidthRequest="600"
+                BackgroundColor="#1e4c96"
+                FontSize="12"
+                Text="Opção 3"
+                Margin="0,0,0,10"
+                Grid.Row="4"
+                Grid.Column="0"
+                Grid.ColumnSpan="3" />
+
+        <Button x:Name="Button4"
+                Clicked="OnButtonResposta04ButtonClicked"
+                WidthRequest="600"
+                BackgroundColor="#1e4c96"
+                FontSize="12"
+                Text="Opção 4"
+                Margin="0,0,0,10"
+                Grid.Row="5"
+                Grid.Column="0"
+                Grid.ColumnSpan="3" />
+
+        <Button x:Name="Button5"
+                Clicked="OnButtonResposta05ButtonClicked"
+                WidthRequest="600"
+                BackgroundColor="#1e4c96"
+                FontSize="12"
+                Text="Opção 5"
+                Margin="0,0,0,10"
+                Grid.Row="6"
+                Grid.Column="0"
+                Grid.ColumnSpan="3" />
+
+        <!-- Botões de ajuda -->
+        <Button x:Name="ButtonCartas"
+                Clicked="OnButtonResposta01ButtonClicked"
+                WidthRequest="200"
+                BackgroundColor="Black"
+                FontSize="14"
+                Text="Cartas"
+                BorderColor="#D4D6D5"
+                BorderWidth="2"
+                Grid.Row="7"
+                Grid.Column="0" />
+
+        <Button x:Name="ButtonConvidados"
+                Clicked="Convidados"
+                BorderColor="#D4D6D5"
+                BorderWidth="2"
+                WidthRequest="200"       
+                BackgroundColor="Black"
+                FontSize="14"
+                Text="Convidados"
+                Grid.Row="7"
+                Grid.Column="1" />
+
+        <Button x:Name="ButtonTiraum"
+                Clicked="OnButtonResposta01ButtonClicked"
+                BorderColor="#D4D6D5"
+                BorderWidth="2"
+                WidthRequest="200"
+                BackgroundColor="Black"
+                FontSize="14"
+                Text="Tira Um"
+                Grid.Row="7"
+                Grid.Column="2" />
     </Grid>
 </ContentPage>
