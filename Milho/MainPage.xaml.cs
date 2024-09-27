@@ -32,9 +32,9 @@
             gerenciador.VerificaCorreta(5); // Correção aqui
         }
 
-         private void Convidados(object sender, EventArgs e)
+        private void Convidados(object sender, EventArgs args)
         {
-           Application.Current.MainPage = new Convidados();
+           Application.Current.MainPage = new FrameConvidados();
         }
     }
 }

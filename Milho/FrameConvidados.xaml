@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Milho.ConvidadosPage"
+             Title="Convidados">
+
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+
+            <!-- Frame principal para manter todo o layout -->
+            <Frame BorderColor="Black" CornerRadius="10" Padding="10">
+                <StackLayout>
+
+                    <!-- Título centralizado -->
+                    <Label Text="Convidados"
+                           HorizontalOptions="Center"
+                           FontSize="Medium" />
+
+                    <!-- Primeiro Convidado -->
+                    <Frame BorderColor="Black" Padding="5">
+                        <Label Text="1- Convidado = C" />
+                    </Frame>
+
+                    <!-- Segundo Convidado -->
+                    <Frame BorderColor="Black" Padding="5">
+                        <Label Text="2- Convidados = C" />
+                    </Frame>
+
+                    <!-- Terceiro Convidado -->
+                    <Frame BorderColor="Black" Padding="5">
+                        <Label Text="3- Convidados = B" />
+                    </Frame>
+
+                    <!-- Quarto Convidado -->
+                    <Frame BorderColor="Black" Padding="5">
+                        <Label Text="4- Convidados = C" />
+                    </Frame>
+
+                    <!-- Botão Voltar -->
+                    <Button Text="Voltar"
+                            HorizontalOptions="Center"
+                            Clicked="VoltarClicked" />
+
+                </StackLayout>
+            </Frame>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

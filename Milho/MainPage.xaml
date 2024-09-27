@@ -112,9 +112,9 @@
                 Grid.Column="0" />
 
         <Button x:Name="ButtonConvidados"
-                Clicked="Convidados"
                 BorderColor="#D4D6D5"
                 BorderWidth="2"
+                Clicked="Convidados"
                 WidthRequest="200"       
                 BackgroundColor="Black"
                 FontSize="14"
