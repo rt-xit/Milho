@@ -1,22 +1,23 @@
-
-namespace Milho
-{
-   public class Gerenciador{
+using Milho;
+namespace Milho;
+public class Gerenciador{
 
     List<Questao> listaQuestoes = new List<Questao>();
     List<int> listaQuestaoRespondida = new List<int>();
     Questao questaoAtual;
-    public Gerenciador(Label labelPergunta, Button buttonResposta01, Button buttonResposta02, Button buttonResposta03, Button buttonResposta04, Button buttonResposta05){
+    public Gerenciador(Label labelPergunta, Button buttonResposta01, Button buttonResposta02, Button buttonResposta03, Button buttonResposta04, Button buttonResposta05)
+    {
         CriarQuestoes(labelPergunta, buttonResposta01, buttonResposta02, buttonResposta03, buttonResposta04, buttonResposta05);
     }
 
-    void CriarQuestoes(Label labelPergunta, Button buttonResposta01, Button buttonResposta02, Button buttonResposta03, Button buttonResposta04, Button buttonResposta05){
+    void CriarQuestoes(Label labelPergunta, Button buttonResposta01, Button buttonResposta02, Button buttonResposta03, Button buttonResposta04, Button buttonResposta05)
+    {
         var q1 = new Questao();
 
         q1.Pergunta = "qual foi a linguagem de programação q levou o homen a lua ";
         q1.Resposta1 = "JAVA";
         q1.Resposta2 = "SQL";
-        q1.Resposta3 = "python"; 
+        q1.Resposta3 = "python";
         q1.Resposta4 = "assembly";
         q1.Resposta5 = "mais ele nem foi a lua mano";
 
@@ -196,34 +197,95 @@ namespace Milho
         q16.Resposta4 = "Saturno";
         q16.Resposta5 = "Mercúrio";
 
-    }
-       public void ProximaQuestao()
-{
-    var numRandom = Random.Shared.Next(0, listaQuestoes.Count);
+        q16.RespostaCerta = 2;
+        q15.ConfiguraEstruturaDesenho(labelPergunta, buttonResposta01, buttonResposta02, buttonResposta03, buttonResposta04, buttonResposta05);
+        listaQuestoes.Add(q16);
 
-    while (listaQuestaoRespondida.Contains(numRandom))
+        var q17 = new Questao();
+        q15.Pergunta = "Qual linguagem de programação é menos utilizada no mundo?";
+        q15.Resposta1 = "COBOL";
+        q15.Resposta2 = "PHP";
+        q15.Resposta3 = "Java script";
+        q15.Resposta4 = "lua";
+        q15.Resposta5 = "swelt";
+
+        q15.RespostaCerta = 1;
+        q15.ConfiguraEstruturaDesenho(labelPergunta, buttonResposta01, buttonResposta02, buttonResposta03, buttonResposta04, buttonResposta05);
+        listaQuestoes.Add(q17);
+
+        var q18 = new Questao();
+        q15.Pergunta = "Qual a linguagem de programação é orientada a objetos?";
+        q15.Resposta1 = "HTML";
+        q15.Resposta2 = "JAVA";
+        q15.Resposta3 = "CSS";
+        q15.Resposta4 = "SQL";
+        q15.Resposta5 = "Brainfuck";
+
+        q15.RespostaCerta = 2;
+        q15.ConfiguraEstruturaDesenho(labelPergunta, buttonResposta01, buttonResposta02, buttonResposta03, buttonResposta04, buttonResposta05);
+        listaQuestoes.Add(q18);
+
+        var q19 = new Questao();
+        q15.Pergunta = "Qual o significado de SQL?";
+        q15.Resposta1 = "Structured Query Language";
+        q15.Resposta2 = "Sequential Query Language";
+        q15.Resposta3 = "Standard Query Language";
+        q15.Resposta4 = "nenhuma desses";
+        q15.Resposta5 = "patrão agora complicou";
+
+        q15.RespostaCerta = 1;
+        q15.ConfiguraEstruturaDesenho(labelPergunta, buttonResposta01, buttonResposta02, buttonResposta03, buttonResposta04, buttonResposta05);
+        listaQuestoes.Add(q19);
+
+        var q20 = new Questao();
+        q15.Pergunta = "Qual é o operador de igualdade em Java?";
+        q15.Resposta1 = "=";
+        q15.Resposta2 = "==";
+        q15.Resposta3 = "===";
+        q15.Resposta4 = "!=";
+        q15.Resposta5 = "?=";
+
+        q15.RespostaCerta = 2;
+        q15.ConfiguraEstruturaDesenho(labelPergunta, buttonResposta01, buttonResposta02, buttonResposta03, buttonResposta04, buttonResposta05);
+        listaQuestoes.Add(q20);
+
+        var q21 = new Questao();
+        q15.Pergunta = "Qual estrutura de dados é usada para armazenar um coleção de elementos de forma ordenada?";
+        q15.Resposta1 = "Array";
+        q15.Resposta2 = "HashMap";
+        q15.Resposta3 = "Set";
+        q15.Resposta4 = "Queue";
+        q15.Resposta5 = "nenhuma dessas";
+
+        q15.RespostaCerta = 2;
+        q15.ConfiguraEstruturaDesenho(labelPergunta, buttonResposta01, buttonResposta02, buttonResposta03, buttonResposta04, buttonResposta05);
+        listaQuestoes.Add(q21);
+
+    }
+    public void ProximaQuestao()
     {
-        numRandom = Random.Shared.Next(0, listaQuestoes.Count);
+        var numRandom = Random.Shared.Next(0, listaQuestoes.Count);
+
+        while (listaQuestaoRespondida.Contains(numRandom))
+        {
+            numRandom = Random.Shared.Next(0, listaQuestoes.Count);
+        }
+
+        listaQuestaoRespondida.Add(numRandom);
+        questaoAtual = listaQuestoes[numRandom];
+        questaoAtual.Desenhar();
     }
 
-    listaQuestaoRespondida.Add(numRandom);
-    questaoAtual = listaQuestoes[numRandom];
-    questaoAtual.Desenhar();
-}
-
-public async void VerificaCorreta(int RespostaSelecionada)
-{
-    if (questaoAtual.VerificaResposta(RespostaSelecionada))
+    public async void VerificaCorreta(int RespostaSelecionada)
     {
-        await Task.Delay(1000);
-        ProximaQuestao();
+        if (questaoAtual.VerificaResposta(RespostaSelecionada))
+        {
+            await Task.Delay(90);
+            ProximaQuestao();
+        }
     }
+
+
 }
 
-   
-       }
-}
 
-
-
-      

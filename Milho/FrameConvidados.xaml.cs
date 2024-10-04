@@ -2,9 +2,9 @@ using Microsoft.Maui.Controls;
 
 namespace Milho
 {
-    public partial class ConvidadosPage : ContentPage
+    public partial class FrameConvidados : ContentPage
     {
-        public ConvidadosPage()
+        public FrameConvidados()
         {
             InitializeComponent();
         }
